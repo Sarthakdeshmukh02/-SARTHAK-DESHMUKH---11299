@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Animated Portfolio</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    color:white;
+    overflow-x:hidden;
+}
+
+/* Floating background circles */
+.bg span{
+    position:absolute;
+    display:block;
+    width:40px;
+    height:40px;
+    background:rgba(255,255,255,0.15);
+    animation: float 25s linear infinite;
+    bottom:-150px;
+    border-radius:50%;
+}
+.bg span:nth-child(1){left:10%; animation-duration:15s;}
+.bg span:nth-child(2){left:30%; width:60px; height:60px; animation-duration:18s;}
+.bg span:nth-child(3){left:50%; animation-duration:20s;}
+.bg span:nth-child(4){left:70%; width:80px; height:80px; animation-duration:22s;}
+.bg span:nth-child(5){left:90%; animation-duration:17s;}
+
+@keyframes float{
+    0%{transform:translateY(0) rotate(0deg); opacity:1;}
+    100%{transform:translateY(-1000px) rotate(360deg); opacity:0;}
+}
+
+/* Header */
+header{
+    text-align:center;
+    padding:100px 20px;
+    animation: fadeIn 2s;
+}
+
+header h1{
+    font-size:3rem;
+}
+
+header span{
+    color:#00ffd5;
+}
+
+header p{
+    margin-top:15px;
+    font-size:1.2rem;
+}
+
+/* Buttons */
+.buttons{
+    margin-top:25px;
+}
+
+.buttons a{
+    text-decoration:none;
+    padding:12px 25px;
+    margin:10px;
+    display:inline-block;
+    border-radius:30px;
+    background:linear-gradient(135deg,#00ffd5,#00aaff);
+    color:#000;
+    font-weight:bold;
+    transition:0.4s;
+}
+
+.buttons a:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 20px #00ffd5;
+}
+
+/* Sections */
+.section{
+    width:85%;
+    max-width:900px;
+    margin:40px auto;
+    padding:30px;
+    background:rgba(255,255,255,0.1);
+    backdrop-filter:blur(10px);
+    border-radius:20px;
+    animation: slideUp 1.5s;
+}
+
+.section h2{
+    text-align:center;
+    margin-bottom:20px;
+    color:#00ffd5;
+}
+
+/* Skills */
+.skills{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:15px;
+}
+
+.skill{
+    padding:15px;
+    background:rgba(255,255,255,0.15);
+    text-align:center;
+    border-radius:15px;
+    transition:0.4s;
+}
+
+.skill:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 15px #00ffd5;
+}
+
+/* Footer */
+footer{
+    text-align:center;
+    padding:20px;
+    opacity:0.7;
+}
+
+/* Animations */
+@keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+@keyframes slideUp{
+    from{transform:translateY(40px); opacity:0;}
+    to{transform:translateY(0); opacity:1;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- Floating background -->
+<div class="bg">
+    <span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<header>
+    <h1>Hello, I'm <span>SARTHAK DESHMUKH</span> 👋</h1>
+    <p>Web Developer | Student | Creative Learner</p>
+
+    <div class="buttons">
+        <a href="https://github.com/Sarthakdeshmukh02/-SARTHAK-DESHMUKH---11299/tree/main/SARTHAK%20-%20IWI" target="_blank">GitHub</a>
+        <a href="https://app.netlify.com/teams/deshmukh-sarthak886/projects" target="_blank">Netlify</a>
+    </div>
+</header>
+
+<div class="section">
+    <h2>About Me</h2>
+    <p>
+        I am a passionate beginner web developer who loves creating 
+        beautiful, animated and user-friendly websites using HTML, CSS and JavaScript.
+    </p>
+</div>
+
+<div class="section">
+    <h2>Skills</h2>
+    <div class="skills">
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">Git & GitHub</div>
+        <div class="skill">Netlify</div>
+    </div>
+</div>
+
+<div class="section">
+    <h2>Contact</h2>
+    <p>Email: example@gmail.com</p>
+    <p>GitHub: github.com/USERNAME</p>
+</div>
+
+<footer>
+    <p>© 2026 | Designed with ❤️</p>
+</footer>
+
+</body>
+</html>
