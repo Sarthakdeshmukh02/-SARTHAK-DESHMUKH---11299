@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Show/Hide & Toggle Demo</title>
+  <style>
+    .hidden {
+      display: none;
+    }
+    .highlight {
+      background-color: yellow;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h2>Show/Hide & Toggle Demo</h2>
+
+  <button onclick="toggleVisibility()">Show/Hide Text</button>
+  <button onclick="toggleHighlight()">Toggle Highlight</button>
+
+  <p id="text">This is a sample paragraph to demonstrate JavaScript functionality.</p>
+
+  <script>
+    // Function to show/hide the element
+    function toggleVisibility() {
+      const el = document.getElementById('text');
+      el.classList.toggle('hidden'); // Add/remove hidden class
+    }
+
+    // Function to toggle highlight styling
+    function toggleHighlight() {
+      const el = document.getElementById('text');
+      el.classList.toggle('highlight'); // Add/remove highlight class
+    }
+  </script>
+</body>
+</html>
+    

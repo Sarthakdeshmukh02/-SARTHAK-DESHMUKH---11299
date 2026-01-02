@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="c" width="300" height="200" style="border:1px solid black;"></canvas>
+
+<script>
+  var canvas = document.getElementById("c");
+  var ctx = canvas.getContext("2d");
+
+  // Rectangle
+  ctx.fillStyle = "red";
+  ctx.fillRect(20, 20, 100, 50);
+
+  // Circle
+  ctx.beginPath();
+  ctx.arc(200, 60, 30, 0, 2 * Math.PI);
+  ctx.fillStyle = "blue";
+  ctx.fill();
+
+  // Line
+  ctx.moveTo(20, 150);
+  ctx.lineTo(280, 150);
+  ctx.stroke();
+</script>
+
+</body>
+</html>

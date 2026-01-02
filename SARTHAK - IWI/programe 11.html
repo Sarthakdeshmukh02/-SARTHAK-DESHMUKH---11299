@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <title>Simple Arithmetic Calculator</title>
+</head>
+<body>
+  <h2>Arithmetic Calculator</h2>
+  <label>Number 1: <input type="number" id="num1" /></label><br />
+  <label>Number 2: <input type="number" id="num2" /></label><br />
+  <button onclick="calculate()">Calculate</button>
+
+  <h3>Results:</h3>
+  <div id="results"></div>
+
+  <script>
+    function calculate() {
+      const a = Number(document.getElementById('num1').value);
+      const b = Number(document.getElementById('num2').value);
+
+      if (isNaN(a) || isNaN(b)) {
+        document.getElementById('results').innerText = 'Please enter valid numbers.';
+        return;
+      }
+
+      const sum = a + b;
+      const diff = a - b;
+      const product = a * b;
+      const quotient = b !== 0 ? (a / b) : 'Cannot divide by zero';
+
+      document.getElementById('results').innerHTML =
+        `${a} + ${b} = ${sum} <br>` +
+        `${a} - ${b} = ${diff} <br>` +
+        `${a} × ${b} = ${product} <br>` +
+        `${a} ÷ ${b} = ${quotient}`;
+    }
+  </script>
+</body>
+</html>

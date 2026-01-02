@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <title>Simple HTML Form (No CSS)</title>
+</head>
+<body>
+  <h1>Registration Form</h1>
+
+  <form action="#" method="post">
+
+    <label for="fullname">Full name:</label><br>
+    <input type="text" id="fullname" name="fullname" placeholder="Your full name" required><br><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" placeholder="you@example.com" required><br><br>
+
+    <label for="age">Age:</label><br>
+    <input type="number" id="age" name="age" min="0" max="120"><br><br>
+
+    <p><strong>Gender:</strong></p>
+    <input type="radio" id="gender_m" name="gender" value="male">
+    <label for="gender_m">Male</label><br>
+
+    <input type="radio" id="gender_f" name="gender" value="female">
+    <label for="gender_f">Female</label><br>
+
+    <input type="radio" id="gender_o" name="gender" value="other">
+    <label for="gender_o">Prefer not to say / Other</label><br><br>
+
+    <p><strong>Interests:</strong></p>
+    <input type="checkbox" id="int_web" name="interests" value="web">
+    <label for="int_web">Web development</label><br>
+
+    <input type="checkbox" id="int_ml" name="interests" value="ml">
+    <label for="int_ml">Machine learning</label><br>
+
+    <input type="checkbox" id="int_iot" name="interests" value="iot">
+    <label for="int_iot">IoT</label><br>
+
+    <input type="checkbox" id="int_other" name="interests" value="other">
+    <label for="int_other">Other</label><br><br>
+
+    <label for="country">Country:</label><br>
+    <select id="country" name="country">
+      <option value="">-- Select --</option>
+      <option value="in">India</option>
+      <option value="us">United States</option>
+      <option value="uk">United Kingdom</option>
+      <option value="au">Australia</option>
+      <option value="other">Other</option>
+    </select><br><br>
+
+    <label for="languages">Known languages (multiple):</label><br>
+    <select id="languages" name="languages" multiple size="4">
+      <option value="english">English</option>
+      <option value="hindi">Hindi</option>
+      <option value="spanish">Spanish</option>
+      <option value="others">Others</option>
+    </select><br><br>
+
+    <label for="message">Message / Notes:</label><br>
+    <textarea id="message" name="message" rows="4" cols="40" placeholder="Anything you want to tell us..."></textarea><br><br>
+
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
+
+  </form>
+
+  <hr>
+  <p>Note: This page intentionally has no CSS. You can copy the HTML and open it in your browser to test the form.</p>
+</body>
+</html>

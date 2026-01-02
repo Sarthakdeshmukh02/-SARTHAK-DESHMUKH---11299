@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Var Let Const Scope Demo</title>
+</head>
+<body>
+
+<h2>JavaScript Scope Demonstration</h2>
+<button onclick="scopeTest()">Click to Run</button>
+
+<script>
+function scopeTest() {
+
+    var a = 10;
+    let b = 20;
+
+    const c = 30;
+
+    if (true) {
+        var a = 100;  
+        let b = 200;   
+        const c = 300; 
+
+        document.write("<b>Inside Block</b><br>");
+        document.write("var a = " + a + "<br>");   
+        document.write("let b = " + b + "<br>");   
+        document.write("const c = " + c + "<br><br>"); 
+    }
+
+    document.write("<b>Outside Block</b><br>");
+    document.write("var a = " + a + "<br>");   
+    document.write("let b = " + b + "<br>");   
+    document.write("const c = " + c + "<br>"); 
+}
+</script>
+</body>
+</html>
+
+

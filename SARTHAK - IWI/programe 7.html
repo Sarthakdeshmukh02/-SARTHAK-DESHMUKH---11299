@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Advanced CSS Example</title>
+  <style>
+    /* Apply a background image to the entire page */
+    body {
+      background-image: url('https://picsum.photos/1200/800');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-bottom: 3px solid darkblue;
+    }
+    h1 {
+      color: darkblue;
+    }
+    .container {
+      background-color: rgba(255, 255, 255, 0.9);
+      width: 70%;
+      margin: 30px auto;
+      padding: 20px;
+      border: 4px double navy;
+      border-radius: 10px;
+      box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+    }
+    .box {
+      background-color: lightblue;
+      border: 2px solid blue;
+      margin: 15px;
+      padding: 15px;
+      width: 250px;
+      display: inline-block;
+      vertical-align: top;
+    }
+    footer {
+      text-align: center;
+      background-color: rgba(0, 0, 50, 0.8);
+      color: white;
+      padding: 15px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Advanced CSS Styling Demo</h1>
+    <p>Using Box Model, Backgrounds, Borders, Margins, and Padding</p>
+  </header>
+  <div class="container">
+    <h2>Box Model Example</h2>
+    <div class="box">
+      <h3>Box 1</h3>
+      <p>This box shows margin, padding, and border applied around the content.</p>
+    </div>
+    <div class="box">
+      <h3>Box 2</h3>
+      <p>Each box has its own spacing, border style, and internal padding.</p>
+    </div>
+    <div class="box">
+      <h3>Box 3</h3>
+      <p>The background and border radius make it look more visually appealing.</p>
+    </div>
+  </div>
+  <footer>
+    <p>&copy; 2025 Advanced CSS Example. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
