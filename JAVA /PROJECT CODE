@@ -1,0 +1,145 @@
+import java.util.Scanner;
+// 1. Doctor Class
+class Doctor {
+    private int doctorId;
+    private String name;
+    private String specialization;
+
+    public Doctor(int doctorId, String name, String specialization) {
+        this.doctorId = doctorId;
+        this.name = name;
+        this.specialization = specialization;
+    }
+
+    public int getDoctorId() { return doctorId; }
+    public String getName() { return name; }
+    public String getSpecialization() { return specialization; }
+}
+
+// 2. Patient Class
+class Patient {
+    private int patientId;
+    private String name;
+    private int age;
+
+    public Patient(int patientId, String name, int age) {
+        this.patientId = patientId;
+        this.name = name;
+        this.age = age;
+    }
+
+    public int getPatientId() { return patientId; }
+    public String getName() { return name; }
+    public int getAge() { return age; }
+}
+
+// 3. Appointment Class linking Doctor and Patient
+class Appointment {
+    private Doctor doctor;
+    private Patient patient;
+    private String timeSlot;
+    private String status; 
+
+    public Appointment(Doctor doctor, Patient patient, String timeSlot) {
+        this.doctor = doctor;
+        this.patient = patient;
+        this.timeSlot = timeSlot;
+        this.status = "Booked";
+    }
+
+    public Doctor getDoctor() { return doctor; }
+    public Patient getPatient() { return patient; }
+    public String getTimeSlot() { return timeSlot; }
+    public String getStatus() { return status; }
+    
+    public void cancelAppointment() {
+        this.status = "Cancelled";
+    }
+
+    public void displayAppointmentDetails() {
+        System.out.println("Doctor: " + doctor.getName());
+        System.out.println("Patient: " + patient.getName());
+        System.out.println("Time: " + timeSlot);
+        System.out.println("Status: " + status);
+        System.out.println("-------------------------");
+    }
+}
+
+// 4. AppointmentManager Class
+class AppointmentManager {
+    private Appointment[] appointments;
+    private int appointmentCount;
+
+    public AppointmentManager(int capacity) {
+        appointments = new Appointment[capacity];
+        appointmentCount = 0;
+    }
+
+    // Checking time slot availability before booking
+    public boolean isSlotAvailable(Doctor doctor, String timeSlot) {
+        for (int i = 0; i < appointmentCount; i++) {
+            if (appointments[i].getDoctor().getDoctorId() == doctor.getDoctorId() &&
+                appointments[i].getTimeSlot().equals(timeSlot) &&
+                appointments[i].getStatus().equals("Booked")) {
+                return false; 
+            }
+        }
+        return true; 
+    }
+
+    // Book appointment logic
+    public void bookAppointment(Doctor doctor, Patient patient, String timeSlot) {
+        System.out.println("Available slot: " + timeSlot);
+        if (isSlotAvailable(doctor, timeSlot)) {
+            if (appointmentCount < appointments.length) {
+                appointments[appointmentCount] = new Appointment(doctor, patient, timeSlot);
+                appointmentCount++;
+                System.out.println("Appointment booked successfully");
+                appointments[appointmentCount - 1].displayAppointmentDetails();
+            } else {
+                System.out.println("Error: System capacity reached.");
+            }
+        } else {
+            System.out.println("Error: Slot already booked");
+        }
+    }
+
+    // Cancel appointment logic
+    public void cancelAppointment(int patientId, String timeSlot) {
+        System.out.println("Cancelling appointment...");
+        for (int i = 0; i < appointmentCount; i++) {
+            if (appointments[i].getPatient().getPatientId() == patientId &&
+                appointments[i].getTimeSlot().equals(timeSlot) &&
+                appointments[i].getStatus().equals("Booked")) {
+                
+                appointments[i].cancelAppointment();
+                System.out.println("Appointment cancelled successfully");
+                return;
+            }
+        }
+        System.out.println("Error: Appointment not found.");
+    }
+}
+
+// 5. Main Class to run the program
+public class HospitalSystemMain {
+    public static void main(String[] args) {
+        // Initialize sample data
+        Doctor doc1 = new Doctor(101, "Dr. Sharma", "Cardiologist");
+        Patient pat1 = new Patient(501, "Rahul", 30);
+        Patient pat2 = new Patient(502, "Amit", 45);
+
+        AppointmentManager manager = new AppointmentManager(10);
+
+        // Attempt Booking
+        manager.bookAppointment(doc1, pat1, "10:00 AM");
+
+        // Attempt Booking same slot (Conflict)
+        System.out.println("Attempting same slot...");
+        manager.bookAppointment(doc1, pat2, "10:00 AM");
+
+        // Cancel Appointment
+        manager.cancelAppointment(501, "10:00 AM");
+    }
+}
+
