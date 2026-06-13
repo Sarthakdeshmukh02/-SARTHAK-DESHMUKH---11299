@@ -1,5 +1,5 @@
 import java.util.Scanner;
-// 1. Doctor Class
+//  Doctor Class
 class Doctor {
     private int doctorId;
     private String name;
@@ -16,7 +16,7 @@ class Doctor {
     public String getSpecialization() { return specialization; }
 }
 
-// 2. Patient Class
+//  Patient Class
 class Patient {
     private int patientId;
     private String name;
@@ -33,7 +33,7 @@ class Patient {
     public int getAge() { return age; }
 }
 
-// 3. Appointment Class linking Doctor and Patient
+//  Appointment class Doctor and Patient
 class Appointment {
     private Doctor doctor;
     private Patient patient;
@@ -65,7 +65,7 @@ class Appointment {
     }
 }
 
-// 4. AppointmentManager Class
+//  AppointmentManager Class
 class AppointmentManager {
     private Appointment[] appointments;
     private int appointmentCount;
@@ -121,7 +121,7 @@ class AppointmentManager {
     }
 }
 
-// 5. Main Class to run the program
+// Class to run the program
 public class HospitalSystemMain {
     public static void main(String[] args) {
         // Initialize sample data
@@ -142,4 +142,3 @@ public class HospitalSystemMain {
         manager.cancelAppointment(501, "10:00 AM");
     }
 }
-
